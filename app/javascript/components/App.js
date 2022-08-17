@@ -20,7 +20,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      destinations: []
     }
   }
 
@@ -100,7 +100,7 @@ class App extends Component {
     return(
       <>
         <Router>
-          <Header>This is our Header</Header>
+          <Header {...this.props}/>
           <Switch>
             <h1>Nomadda App</h1>
           </Switch>
