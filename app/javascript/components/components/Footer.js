@@ -10,5 +10,5 @@ class Footer extends Component {
     )
   }
 }
-// style={{ color: "#448899"}}
+
 export default Footer
