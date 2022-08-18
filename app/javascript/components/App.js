@@ -102,9 +102,10 @@ class App extends Component {
         <Router>
           <Header {...this.props}/>
           <Switch>
-            <h1>Nomadda App</h1>
+            <Route exact path="/" component={Home} />
+            <Route component={NotFound}/>
           </Switch>
-          <Footer>This is our Footer</Footer>
+          <Footer/>
         </Router>
       </>
     )
