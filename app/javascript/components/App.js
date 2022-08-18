@@ -103,9 +103,10 @@ class App extends Component {
           <Header {...this.props}/>
           <Switch>
             <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />} />
-            <h1>Nomadda App</h1>
+            <Route exact path="/" component={Home} />
+            <Route component={NotFound}/>
           </Switch>
-          <Footer>This is our Footer</Footer>
+          <Footer/>
         </Router>
       </>
     )
