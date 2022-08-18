@@ -1,16 +1,44 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- @import 'bootstrap';
+@import 'bootstrap';
+@import 'https://fonts.googleapis.com/css?family=VT323';
+
+.notfound{
+  $light-grey: #e0e2f4;
+  $grey: #aaaaaa;
+  
+  $base-font-size: 20px;
+  $font-stack: 'VT323', monospace;
+  
+  main,
+  h1,
+  p,
+  a { color: $light-grey; }
+  
+  main,
+  p { font: normal #{$base-font-size}/1.25rem $font-stack; }
+  h1 { font: normal 2.75rem/1.05em $font-stack; }
+
+  
+
+  .container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .link {
+    margin-top: 20px;
+    margin-left: 50%;
+    text-decoration: none;
+    padding: 0 9px 2px 8px;
+      &:hover,
+      &:focus {
+      background: $grey;
+      color: #FFFFFF;
+    }
+  }
+
+  .title { margin-bottom: 50px; }
+  
+}

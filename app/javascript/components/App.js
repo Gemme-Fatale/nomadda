@@ -102,9 +102,21 @@ class App extends Component {
         <Router>
           <Header {...this.props}/>
           <Switch>
-            <h1>Nomadda App</h1>
+            <Route exact path="/" component={Home} />
+            {/* <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />}/>
+            <Route path="/mytrips" render={(props) => {
+            let myTrips = this.state.destinations.filter(destination => destination.user_id === current_user.id)
+            return (<ProtectedIndex apartments={myTrips}/>)}}/>
+            <Route path="/show" component={Show} />
+            <Route path ='/usercreate' render={() => <UserCreate createUserDestinations={this.createUserDestinations} current_user = {this.props.current_user}/>
+            }/>
+            <Route path="/useredit/:id" render={(props) => {
+            let id = +props.match.params.id
+            let destination = this.state.destinations.find(destination => destination.id === id)
+            return <UserEdit {...props} destination={destination} />}}/> */}
+          <Route component={NotFound}/>
           </Switch>
-          <Footer>This is our Footer</Footer>
+          <Footer/>
         </Router>
       </>
     )
