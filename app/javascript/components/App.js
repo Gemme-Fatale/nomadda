@@ -103,7 +103,7 @@ class App extends Component {
           <Header {...this.props}/>
           <Switch>
             <Route exact path="/" component={Home} />
-            {/* <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />}/>
+            <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />}/>
             <Route path="/mytrips" render={(props) => {
             let myTrips = this.state.destinations.filter(destination => destination.user_id === current_user.id)
             return (<ProtectedIndex apartments={myTrips}/>)}}/>
@@ -113,7 +113,7 @@ class App extends Component {
             <Route path="/useredit/:id" render={(props) => {
             let id = +props.match.params.id
             let destination = this.state.destinations.find(destination => destination.id === id)
-            return <UserEdit {...props} destination={destination} />}}/> */}
+            return <UserEdit {...props} destination={destination} />}}/>
           <Route component={NotFound}/>
           </Switch>
           <Footer/>
