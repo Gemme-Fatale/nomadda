@@ -102,8 +102,12 @@ class App extends Component {
         <Router>
           <Header {...this.props}/>
           <Switch>
+
+            <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />} />
+        
             <Route exact path="/" component={Home} />
             <Route component={NotFound}/>
+
           </Switch>
           <Footer/>
         </Router>
