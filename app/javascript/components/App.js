@@ -97,7 +97,6 @@ class App extends Component {
     } = this.props
     console.log("logged_in:", logged_in)
     console.log("current_user:", current_user)
-
     console.log("destinations", this.state.destinations)
     return(
       <>
