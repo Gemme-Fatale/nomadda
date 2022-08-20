@@ -11,27 +11,28 @@ class ProtectedIndex extends Component {
     } = this.props
     
     return (
-        <>
-      <h1></h1>
-      <div className= 'myTrips'>
-        <Row sm="3">
-        {destinations && destinations.map(destination => {
-                    return(
-                <Card key ={destination.id}>
-                    <CardImg top width="100%" src={destination.image} alt="Card image cap" ></CardImg>
-                    <CardBody>
-                        <CardTitle>{destination.location}, {destination.country}</CardTitle>
-                        <br/>
-                        <CardSubtitle>Dates: {destination.start_date} - {destination.end_date}</CardSubtitle>
-                        <CardSubtitle>Travelers: {destination.travelers}</CardSubtitle>
-                        <CardText>{destination.trip_details}</CardText>
-                        <Button>More Info</Button>
-                    </CardBody>
-                </Card>
-                    )
-                    })}
-            </Row>
-        </div>
+      <>
+        <h1></h1>
+        <div className= 'myTrips'>
+          <Row sm="3">
+          {destinations && destinations.map(destination => {
+                      return(
+                  <Card key ={destination.id}>
+                      <CardImg top width="100%" src={destination.image} alt="Card image cap" ></CardImg>
+                      <CardBody>
+                          <CardTitle>{destination.location}, {destination.country}</CardTitle>
+                          <br/>
+                          <CardSubtitle>Dates: {destination.start_date} - {destination.end_date}</CardSubtitle>
+                          <CardSubtitle>Travelers: {destination.travelers}</CardSubtitle>
+                          <CardText>{destination.trip_details}</CardText>
+                          <Button>Edit Trip</Button>
+                          <Button>Delete Trip</Button>
+                      </CardBody>
+                  </Card>
+                      )
+                      })}
+              </Row>
+          </div>
       </>
 
     )
