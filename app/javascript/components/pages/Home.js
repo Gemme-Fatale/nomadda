@@ -80,12 +80,10 @@ class Home extends Component {
           <br />
           <CardGroup className="homepage">
             <Card>
-              {/* <CardImg alt="Card image cap" src="https://picsum.photos/318/180" top width="100%"/> */}
               <CardBody className="homepage">
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Safe and Welcoming Destinations
                 </CardTitle>
-                {/* <CardSubtitle className="mb-2 text-muted" tag="h6" style={{color:"#77DDEE"}}>Safe and Welcoming Destinations</CardSubtitle> */}
                 <CardText style={{ color: "#F8A964" }}>
                   {" "}
                   Nomadda can assure you that we have verified the travel
@@ -98,12 +96,10 @@ class Home extends Component {
               </CardBody>
             </Card>
             <Card>
-              {/* <CardImg alt="Card image cap" src="https://picsum.photos/318/180" top width="100%"/> */}
               <CardBody className="homepage">
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Trip Builder
                 </CardTitle>
-                {/* <CardSubtitle className="mb-2 text-muted" tag="h6" style={{color:"#77DDEE"}}>Trip Builder</CardSubtitle> */}
                 <CardText style={{ color: "#F8A964" }}>
                   {" "}
                   With this all inclusive web application, you can use Nomadda
@@ -115,12 +111,10 @@ class Home extends Component {
               </CardBody>
             </Card>
             <Card>
-              {/* <CardImg alt="Card image cap" src="https://picsum.photos/318/180" top width="100%"/> */}
               <CardBody className="homepage">
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Crime statistics
                 </CardTitle>
-                {/* <CardSubtitle className="mb-2 text-muted" tag="h6" style={{color:"#77DDEE"}}>Crime statistics</CardSubtitle> */}
                 <CardText style={{ color: "#F8A964" }}>
                   Although, we can guarantee you a safe and welcoming
                   destination to visit, Nomadda is not responsible for political
@@ -133,12 +127,10 @@ class Home extends Component {
               </CardBody>
             </Card>
             <Card>
-              {/* <CardImg alt="Card image cap" src="https://picsum.photos/318/180" top width="100%"/> */}
               <CardBody className="homepage">
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Resource Hub
                 </CardTitle>
-                {/* <CardSubtitle className="mb-2 text-muted" tag="h6" style={{color:"#77DDEE"}}>Resource Hub</CardSubtitle> */}
                 <CardText style={{ color: "#F8A964" }}>
                   The resources we have provided have been thoroughly vetted to
                   make sure that they are not only a verified source of

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import {  } from 'reactstrap'
-import { ABSOLUTE_RESOURCE_PATH } from 'webpack/lib/ModuleFilenameHelpers'
+
 
 class Footer extends Component {
   render() {
