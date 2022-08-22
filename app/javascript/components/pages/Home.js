@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { UncontrolledCarousel, Row, Col, Card, CardBody, CardTitle, CardText, CardGroup, CardSubtitle, CardImg, Button } from "reactstrap";
+import { UncontrolledCarousel, Row, Col, Card, CardBody, CardTitle, CardText, CardGroup, CardImg } from "reactstrap";
+import ScrollToTop from '../components/ScrollToTop';
 
 class Home extends Component {
   constructor(props) {
@@ -36,33 +37,11 @@ class Home extends Component {
           caption: 'Travel',
           key: 5,
         },
-      ],
-      is_visible: false
+      ]
     }
   }
-
-  componentDidMount(){
-    var scrollComponent = this;
-    document.addEventListener("scroll", function(e) {
-      scrollComponent.toggleVisibility()
-    })
-  }
-
-  toggleVisibility(){
-    if(window.pageYOffset > 300){
-      this.setState({is_visible: true})
-    } else {
-      this.setState({is_visible: false})
-    }
-  }
-
-  scrollToTop(){
-    window.scrollTo({top:0, behavior:"smooth"})
-  }
-
 
   render() {
-    const {is_visible} = this.state;
     return (
       <>
         <div className="allhome">
@@ -152,8 +131,7 @@ class Home extends Component {
               </CardText>
             </CardBody>
           </Card>
-          {is_visible && (
-            <Button className='totopbutton' onClick={() => this.scrollToTop()}>Back to top</Button>)}
+          <ScrollToTop/>
           <br/>
           <br/>
           <br/>
