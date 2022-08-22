@@ -20,13 +20,16 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      destinations: []
+      destinations: [],
+      countries: []
     }
   }
 
   componentDidMount(){
     this.readNomaddaDestinations()
+  
   }
+
 
   readNomaddaDestinations = () => {
     fetch("/destinations")
@@ -94,20 +97,19 @@ class App extends Component {
     } = this.props
     console.log("logged_in:", logged_in)
     console.log("current_user:", current_user)
-    console.log("new_user_route:", new_user_route)
-    console.log("sign_in_route:", sign_in_route)
-    console.log("sign_out_route:", sign_out_route)
+    console.log("destinations", this.state.destinations)
     return(
       <>
         <Router>
           <Header {...this.props}/>
           <Switch>
-
-            <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />} />
-        
             <Route exact path="/" component={Home} />
+            <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />} />
+            <Route path="/mytrips" render={(props) => {
+              let myTrips = this.state.destinations.filter(destinations => destinations.visitable_id === current_user.id && destinations.visitable_type === 'User')
+              return(
+                <ProtectedIndex destinations={myTrips} />)}} />
             <Route component={NotFound}/>
-
           </Switch>
           <Footer/>
         </Router>

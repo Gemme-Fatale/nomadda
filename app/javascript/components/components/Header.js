@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NavItem, Nav } from 'reactstrap'
+import {NavLink} from 'react-router-dom'
 
 class Header extends Component {
   render() {
@@ -31,7 +32,7 @@ class Header extends Component {
           }
           {logged_in &&
             <NavItem>
-              <a href={`/users/${current_user.id}`} className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>My Destinations</a>
+              <NavLink to={"/mytrips"} className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>My Destinations</NavLink>
             </NavItem>
           }
           {!logged_in &&
