@@ -20,12 +20,14 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      destinations: []
+      destinations: [],
+      countries: []
     }
   }
 
   componentDidMount(){
-    this.readNomaddaDestinations()
+    Promise.all(this.readNomaddaDestinations(),
+    this.readNomaddaCountries())
   }
 
   readNomaddaDestinations = () => {
@@ -33,6 +35,13 @@ class App extends Component {
     .then(response => response.json())
     .then(destinationArray => this.setState({destinations: destinationArray}))
     .catch(errors => console.log("Destination read errors:", errors))
+  }
+
+  readNomaddaCountries = () => {
+    fetch("/countries")
+    .then(response => response.json())
+    .then(countryArray => this.setState({countries: countryArray}))
+    .catch(errors => console.log("Country read errors: ", errors))
   }
 
   createUserDestinations = (mytrips) => {
@@ -84,6 +93,8 @@ class App extends Component {
     .catch(errors => console.log ("Destination delete errors:", errors))
   }
 
+
+
   render() {
     const {
       logged_in,
@@ -102,10 +113,14 @@ class App extends Component {
         <Router>
           <Header {...this.props}/>
           <Switch>
-            <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />} />
-            <h1>Nomadda App</h1>
+
+            <Route path="/countrieslist" render = {(props) => <Index {...props} countries={this.state.countries} />} />
+        
+            <Route exact path="/" component={Home} />
+            <Route component={NotFound}/>
+
           </Switch>
-          <Footer>This is our Footer</Footer>
+          <Footer/>
         </Router>
       </>
     )
