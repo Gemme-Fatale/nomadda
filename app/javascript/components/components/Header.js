@@ -32,6 +32,11 @@ class Header extends Component {
           }
           {logged_in &&
             <NavItem>
+              <a href="/countries" className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>Countries</a>
+            </NavItem>
+          }
+          {logged_in &&
+            <NavItem>
               <NavLink to={"/mytrips"} className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>My Destinations</NavLink>
             </NavItem>
           }
@@ -40,7 +45,17 @@ class Header extends Component {
               <a href="/resources" className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>Resources</a>
             </NavItem>
           }
+          {logged_in &&
+            <NavItem>
+              <a href="/resources" className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>Resources</a>
+            </NavItem>
+          }
           {!logged_in &&
+            <NavItem>
+              <a href="/aboutus" className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>About Us</a>
+            </NavItem>
+          }
+          {logged_in &&
             <NavItem>
               <a href="/aboutus" className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>About Us</a>
             </NavItem>
