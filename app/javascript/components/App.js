@@ -26,16 +26,22 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.readNomaddaDestinations()
-  
+    Promise.all(this.readNomaddaDestinations(),
+    this.readNomaddaCountries())
   }
-
 
   readNomaddaDestinations = () => {
     fetch("/destinations")
     .then(response => response.json())
     .then(destinationArray => this.setState({destinations: destinationArray}))
     .catch(errors => console.log("Destination read errors:", errors))
+  }
+
+  readNomaddaCountries = () => {
+    fetch("/countries")
+    .then(response => response.json())
+    .then(countryArray => this.setState({countries: countryArray}))
+    .catch(errors => console.log("Country read errors: ", errors))
   }
 
   createUserDestinations = (mytrips) => {
@@ -95,21 +101,18 @@ class App extends Component {
       sign_in_route,
       sign_out_route
     } = this.props
-    console.log("logged_in:", logged_in)
-    console.log("current_user:", current_user)
-    console.log("destinations", this.state.destinations)
     return(
       <>
         <Router>
           <Header {...this.props}/>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />} />
+           <Route exact path="/" component={Home} />
+            <Route path="/countrieslist" render = {(props) => <Index {...props} countries={this.state.countries} />} />
             <Route path="/mytrips" render={(props) => {
               let myTrips = this.state.destinations.filter(destinations => destinations.visitable_id === current_user.id && destinations.visitable_type === 'User')
               return(
                 <ProtectedIndex destinations={myTrips} />)}}/>
-            <Route exact path="/resources" component={Resources}></Route>
+             <Route exact path="/resources" component={Resources}></Route>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
