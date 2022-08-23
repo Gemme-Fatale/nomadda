@@ -77,3 +77,43 @@
 .totopbutton{
   margin-left: 45%;
 }
+
+.resourcePage {
+  background-color: #FFFFF0;
+}
+
+.resourceheader {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  src: 'https://fonts.googleapis.com/css?family=VT323';
+  font-family: 'VT323', monospace, bold;
+  color: #448899;
+}
+
+.leftcardresource {
+  margin-left: 270px;
+  margin-bottom: 20px;
+}
+
+.rightcardresource {
+  // margin-right: 50px;
+  margin-bottom: 20px;
+}
+
+.leftcardtitleresource {
+  src: 'https://fonts.googleapis.com/css?family=VT323';
+  font-family: 'VT323', monospace;
+  color: #77DDEE;
+  font-size: x-large;
+  text-align: center;
+}
+
+.rightcardtitleresource{
+  src: 'https://fonts.googleapis.com/css?family=VT323';
+  font-family: 'VT323', monospace;
+  color: #77DDEE;
+  font-size: x-large;
+  text-align: center;
+}
+

@@ -108,7 +108,8 @@ class App extends Component {
             <Route path="/mytrips" render={(props) => {
               let myTrips = this.state.destinations.filter(destinations => destinations.visitable_id === current_user.id && destinations.visitable_type === 'User')
               return(
-                <ProtectedIndex destinations={myTrips} />)}} />
+                <ProtectedIndex destinations={myTrips} />)}}/>
+            <Route exact path="/resources" component={Resources}></Route>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
