@@ -112,6 +112,8 @@ class App extends Component {
               let myTrips = this.state.destinations.filter(destinations => destinations.visitable_id === current_user.id && destinations.visitable_type === 'User')
               return(
                 <ProtectedIndex destinations={myTrips} />)}}/>
+            <Route path="/usercreate" render={()=>{
+              return( <UserCreate createDestination = {this.createDestination} current_user = {this.props.current_user} />)}} />    
              <Route exact path="/resources" component={Resources}></Route>
             <Route component={NotFound}/>
           </Switch>
