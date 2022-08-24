@@ -8,10 +8,16 @@ export class UserEdit extends Component {
     this.state = {
       updatedTrip: {
         location: this.props.destinations?.location,
+        main_attraction: this.props.destinations?.main_attraction,
         start_date: this.props.destinations?.start_date,
         end_date: this.props.destinations?.end_date,
         travelers: this.props.destinations?.travelers,
-        trip_details: this.props.destinations?.trip_details
+        trip_details: this.props.destinations?.trip_details,
+        image: this.props.destinations?.image,
+        family_friendly: this.props.destinations?.family_friendly,
+        visitable_id: this.props.destinations?.visitable_id,
+        visitable_type: this.props.destinations?.visitable_type,
+        country: this.props.destinations?.country
       },
       success: false
     }
@@ -30,7 +36,6 @@ export class UserEdit extends Component {
 
   render(){
     let {destinations} = this.props
-    console.log("trip" , this.state.updatedTrip)
     return (
       <>
         <h2 className='usereditheader'>Let's Make Some Changes!</h2>
