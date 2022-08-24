@@ -38,9 +38,9 @@ class App extends Component {
     .catch(errors => console.log("Destination read errors:", errors))
   }
 
-  createUserDestinations = (mytrips) => {
+  createUserDestinations = (newTrip) => {
     fetch("/destinations", {
-      body: JSON.stringify(mytrips),
+      body: JSON.stringify(newTrip),
       headers:{
         "Content-Type": "application/json"
       },
@@ -53,24 +53,17 @@ class App extends Component {
   }
 
   updateUserDestinations = (editdestinations, id) => {
+    
     fetch(`/destinations/${id}`, {
       body: JSON.stringify(editdestinations),
-      method: 'PUT',
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       }
     })
     .then(response => response.json())
-    .then(destination => {
-      this.setState({
-        destinations: this.state.destinations.map(destination => {
-          if (destination.id === id) {
-            return destination = editdestinations
-          } else {
-            return destination
-          }
-        })
-      })
+    .then(destinations => {
+      this.readNomaddaDestinations()
     })
     .catch(errors => console.log("Destination update errors:", errors))
   }
@@ -95,9 +88,9 @@ class App extends Component {
       sign_in_route,
       sign_out_route
     } = this.props
-    console.log("logged_in:", logged_in)
-    console.log("current_user:", current_user)
-    console.log("destinations", this.state.destinations)
+    // console.log("logged_in:", logged_in)
+    // console.log("current_user:", current_user)
+
     return(
       <>
         <Router>
@@ -107,9 +100,12 @@ class App extends Component {
             <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />} />
             <Route path="/mytrips" render={(props) => {
               let myTrips = this.state.destinations.filter(destinations => destinations.visitable_id === current_user.id && destinations.visitable_type === 'User')
-              return(
-                <ProtectedIndex destinations={myTrips} />)}}/>
-            <Route exact path="/resources" component={Resources}></Route>
+              return(<ProtectedIndex destinations={myTrips} />)}}/>
+            <Route path="/useredit/:id" render={(props) => {
+            let id = +props.match.params.id
+            let destinations = this.state.destinations.find(destination => destination.id === id)
+            return <UserEdit destinations={destinations} updateUserDestinations={this.updateUserDestinations}/>}} />
+            <Route exact path="/resources" component={Resources}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
