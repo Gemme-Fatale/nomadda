@@ -15,8 +15,4 @@ describe("When UserEdit renders", () => {
     expect(userEditHeading.length).toEqual(1);
     expect(userEditHeading.text()).toEqual("Let's Make Some Changes!")  
   });
-  it("it display all navigations to the website", () => {
-    const headerHeading = headerRender.find("Nav");
-    expect(headerHeading.length).toEqual(1);
-  });
 });
