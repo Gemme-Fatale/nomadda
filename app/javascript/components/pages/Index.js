@@ -19,7 +19,7 @@ class Index extends Component {
                       {country.name}
                     </CardTitle>
                     <CardSubtitle>
-                      Prime location: {country.prime_location}
+                      Prime location: {country.prime_destination}
                     </CardSubtitle>
                     <CardSubtitle> 
                       NightLife Rating: {country.nightlife}

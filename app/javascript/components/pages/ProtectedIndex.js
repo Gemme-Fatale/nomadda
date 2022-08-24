@@ -12,7 +12,7 @@ class ProtectedIndex extends Component {
     
     return (
       <>
-        <h1></h1>
+        <h1>My Trips</h1>
         <div className= 'myTrips'>
           <Row sm="3">
           {destinations && destinations.map(destination => {

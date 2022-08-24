@@ -8,18 +8,23 @@ class UserCreate extends Component {
     this.state = {
       newDestination: {
         location:"",
+        main_attraction: "Elephants",
         start_date:"",
         end_date:"",
         travelers:"",
         trip_details:"",
-        image: "",
-        family_friendly: ""
+        image:"https://live.staticflickr.com/3836/33536779445_88cd216ca8_b.jpg",
+        family_friendly: true,
+        visitable_id: this.props.current_user.id,
+        visitable_type: "User",
+        country: "Thailand" 
       },
       submitted : false
     }
   }
   
   handleChange = (e) => {
+    this.setState({value: e.target.value});
   
     let {newDestination} = this.state
     newDestination[e.target.name] = e.target.value
@@ -27,14 +32,15 @@ class UserCreate extends Component {
   }
 
   handleSubmit = () => {
-    this.props.createDestination(this.state.newDestination)
-    this.setState({submitted: true})
+    alert('A destination was made!: ' + this.state.value);
+    this.props.createUserDestinations(this.state.newDestination)
+    this.setState({ submitted: true})
   }
 
 
 
   render() {
-
+  console.log("state", this.state)
     return (
       <>
       <h1>Let's Build a Trip!</h1>
@@ -84,30 +90,30 @@ class UserCreate extends Component {
               value = {this.state.newDestination.trip_details}
               />
         </FormGroup>
-        <FormGroup>
+        {/* <FormGroup>
           <Label for="image">Image</Label>
             <Input
               type="text"
               name="image"
-              readOnly = {true}
-              value = {this.state.newDestination.image} disabled
+              onChange = {this.handleChange}
+              value = {this.state.newDestination.image}
               />
-        </FormGroup>
-        <FormGroup>
+        </FormGroup> */}
+        {/* <FormGroup>
           <Label for="family_friendly">Family Friendly</Label>
             <Input
-              type="boolean"
+              type="text"
               name="family_friendly"
               onChange = {this.handleChange}
-              value = {this.state.newDestination.family_friendly} disabled
+              value = {this.state.newDestination.family_friendly}
               />
-        </FormGroup>
+        </FormGroup> */}
           <Button
             name="submit"
             onClick={this.handleSubmit}>
             Create Trip!
           </Button>
-        { this.state.submitted && <Redirect to="/mytrips" />}
+        { this.state.submitted && <Redirect to="/mytrips" />} 
       </Form>
       </>
     )
