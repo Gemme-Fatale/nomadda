@@ -9,20 +9,15 @@ describe("When Index renders", () => {
     let indexRender;
       beforeEach(() => {
         indexRender = shallow(<Index />)
-      }
-    )
-it("it contains 2 div tags", () => {
-    
-    const indexDiv = indexRender.find("div")
-
-    expect(indexDiv.length).toEqual(2)
-
+      })
+  it("it contains 2 div tags", () => {
+      const indexDiv = indexRender.find("div")
+      expect(indexDiv.length).toEqual(2)
   })
 
-  it("displays a paragraph tag", () => {
-
-    const indexParagraphTag = indexRender.find("p")
-
-    expect(indexParagraphTag.length).toEqual(1)
+  it("displays a Card group", () => {
+    const indexCardGroup = indexRender.find("CardGroup")
+    expect(indexCardGroup.length).toEqual(1)
   })
+  
 })
