@@ -26,10 +26,9 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.readNomaddaDestinations()
-  
+    Promise.all(this.readNomaddaDestinations(),
+    this.readNomaddaCountries())
   }
-
 
   readNomaddaDestinations = () => {
     fetch("/destinations")
@@ -38,14 +37,20 @@ class App extends Component {
     .catch(errors => console.log("Destination read errors:", errors))
   }
 
-  createUserDestinations = (newTrip) => {
+  readNomaddaCountries = () => {
+    fetch("/countries")
+    .then(response => response.json())
+    .then(countryArray => this.setState({countries: countryArray}))
+    .catch(errors => console.log("Country read errors: ", errors))
+  }
+
+  createUserDestinations = (mytrips) => {
     fetch("/destinations", {
-      body: JSON.stringify(newTrip),
+      body: JSON.stringify(mytrips),
       headers:{
         "Content-Type": "application/json"
       },
       method: "POST"
-      
     })
     .then(response => response.json())
     .then(() => this.readNomaddaDestinations())
@@ -87,25 +92,22 @@ class App extends Component {
       sign_in_route,
       sign_out_route
     } = this.props
-    console.log("destinations:", this.state.destinations)
-    console.log()
-    console.log("current_user:", current_user)
-
     return(
       <>
         <Router>
           <Header {...this.props}/>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/countries" render = {(props) => <Index {...props} destinations={this.state.destinations} />} />
+             <Route exact path="/" component={Home} />
+              <Route path="/countrieslist" render = {(props) => <Index {...props} countries={this.state.countries} />} />
               <Route path="/mytrips" render={(props) => {
                 let myTrips = this.state.destinations.filter(destinations => destinations.visitable_id === current_user.id && destinations.visitable_type === 'User')
-                return(<ProtectedIndex destinations={myTrips} />)}}/>
-              <Route path="/useredit/:id" render={(props) => {
-              let id = +props.match.params.id
-              let destinations = this.state.destinations.find(destination => destination.id === id)
-              return <UserEdit destinations={destinations} updateUserDestinations={this.updateUserDestinations}/>}} />
-              <Route exact path="/resources" component={Resources}/>
+                return(
+                  <ProtectedIndex destinations={myTrips} />)}}/>
+               <Route path="/useredit/:id" render={(props) => {
+                let id = +props.match.params.id
+                let destinations = this.state.destinations.find(destination => destination.id === id)
+                return <UserEdit destinations={destinations} updateUserDestinations={this.updateUserDestinations}/>}} />
+               <Route exact path="/resources" component={Resources}></Route>
               <Route component={NotFound}/>
             </Switch>
           <Footer/>

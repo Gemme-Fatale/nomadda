@@ -3,12 +3,19 @@ class DestinationsController < ApplicationController
         destinations = Destination.all
         render json: destinations
     end
+
     def update
         destination = Destination.find(params[:id])
         destination.update(destination_params)
         if destination.valid?
             render json: destination
         else
+    
+    def create
+        destination = Destination.create(destination_params)
+        if destination.valid?
+            render json: destination
+        else 
             render json: destination.errors, status: 422
         end
     end

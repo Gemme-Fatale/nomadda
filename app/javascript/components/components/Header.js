@@ -27,12 +27,12 @@ class Header extends Component {
           }
           {!logged_in &&
             <NavItem>
-              <a href="/countries" className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>Countries</a>
+              <a href="/countrieslist" className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>Countries</a>
             </NavItem>
           }
           {logged_in &&
             <NavItem>
-              <a href="/countries" className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>Countries</a>
+              <a href="/countrieslist" className="nav-link" style={{ backgroundColor: "#448899", color: "white"}}>Countries</a>
             </NavItem>
           }
           {logged_in &&
