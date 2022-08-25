@@ -23,6 +23,12 @@ class DestinationsController < ApplicationController
         end
     end
 
+    def destroy
+        destination = Destination.find(params[:id])
+        destination.destroy
+        render json: destinations
+    end
+
     private
     def destination_params
         params.require(:destination).permit(:location, :main_attraction, :start_date, :end_date, :travelers, :trip_details, :family_friendly, :image, :visitable_id, :visitable_type, :country)

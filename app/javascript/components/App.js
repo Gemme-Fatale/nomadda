@@ -26,8 +26,8 @@ class App extends Component {
   }
 
   componentDidMount(){
-    Promise.all(this.readNomaddaDestinations(),
-    this.readNomaddaCountries())
+    Promise.all([this.readNomaddaDestinations(),
+    this.readNomaddaCountries()])
   }
 
   readNomaddaDestinations = () => {
@@ -72,8 +72,8 @@ class App extends Component {
     .catch(errors => console.log("Destination update errors:", errors))
   }
 
-  deleteUserDestination = (destinationId) => {
-    fetch(`/destinations/${destinationId}`, {
+  deleteUserDestination = (id) => {
+    fetch(`/destinations/${id}`, {
       headers: {
         "Content-Type": "application/json"
       },
@@ -102,7 +102,7 @@ class App extends Component {
               <Route path="/mytrips" render={(props) => {
                 let myTrips = this.state.destinations.filter(destinations => destinations.visitable_id === current_user.id && destinations.visitable_type === 'User')
                 return(
-                  <ProtectedIndex destinations={myTrips} />)}}/>
+                  <ProtectedIndex destinations={myTrips} deleteUserDestination={this.deleteUserDestination} />)}}/>
                <Route path="/useredit/:id" render={(props) => {
                 let id = +props.match.params.id
                 let destinations = this.state.destinations.find(destination => destination.id === id)

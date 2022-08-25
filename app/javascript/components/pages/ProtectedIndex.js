@@ -1,22 +1,26 @@
-import React, { Component } from 'react'
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Row, CardText  } from 'reactstrap';
-import { NavLink } from 'react-router-dom'
-
+import React, { Component } from "react";
+import {
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Button,
+  Row,
+  CardText,
+} from "reactstrap";
+import { NavLink } from "react-router-dom";
 
 class ProtectedIndex extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-        success: false
-    }
+      success: false,
+    };
   }
 
   render() {
-    const {
-      destinations,
-      logged_in,
-      current_user,
-    } = this.props
+    const { destinations, logged_in, current_user } = this.props;
     return (
       <>
         <div className="myTrips">
@@ -47,7 +51,11 @@ class ProtectedIndex extends Component {
                       <NavLink to={`/useredit/${destination.id}`}>
                         <Button>Edit Trip</Button>
                       </NavLink>
-                      <Button>Delete Trip</Button>
+                      <NavLink to={"/mytrips"} >
+                        <Button onClick={() => this.props.deleteUserDestination(destination.id)}>
+                          Delete Trip
+                        </Button>
+                      </NavLink>
                     </CardBody>
                   </Card>
                 );
@@ -59,4 +67,4 @@ class ProtectedIndex extends Component {
   }
 }
 
-export default ProtectedIndex
+export default ProtectedIndex;
