@@ -26,7 +26,7 @@ class DestinationsController < ApplicationController
     def destroy
         destination = Destination.find(params[:id])
         destination.destroy
-        render json: Destination.all
+        render json: destinations
     end
 
     private
