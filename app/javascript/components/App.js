@@ -97,7 +97,7 @@ class App extends Component {
         <Router>
           <Header {...this.props}/>
             <Switch>
-             <Route exact path="/" component={Home} />
+              <Route exact path="/" component={Home} />
               <Route path="/countrieslist" render = {(props) => <Index {...props} countries={this.state.countries} />} />
               <Route path="/mytrips" render={(props) => {
                 let myTrips = this.state.destinations.filter(destinations => destinations.visitable_id === current_user.id && destinations.visitable_type === 'User')
@@ -107,7 +107,8 @@ class App extends Component {
                 let id = +props.match.params.id
                 let destinations = this.state.destinations.find(destination => destination.id === id)
                 return <UserEdit destinations={destinations} updateUserDestinations={this.updateUserDestinations}/>}} />
-               <Route exact path="/resources" component={Resources}></Route>
+              <Route exact path="/resources" component={Resources}/>
+              <Route exact path="/aboutus" component={AboutUs}/>
               <Route component={NotFound}/>
             </Switch>
           <Footer/>
