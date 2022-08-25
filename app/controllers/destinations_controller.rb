@@ -10,6 +10,9 @@ class DestinationsController < ApplicationController
         if destination.valid?
             render json: destination
         else
+            render json: destination.errors, status: 422
+        end 
+    end
     
     def create
         destination = Destination.create(destination_params)
