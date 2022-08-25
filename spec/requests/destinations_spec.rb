@@ -100,4 +100,31 @@ RSpec.describe "Destinations", type: :request do
 
     end
   end
+
+   describe "DELETE /destroy" do
+    it "deletes a destination" do
+      destination_params ={
+        destination: {
+          location: 'Sitges', 
+          main_attraction: 'Grand Palace and Wat Prakeaw',
+          start_date: 20230101,
+          end_date: 20230102,
+          travelers: 0,
+          trip_details: 'n/a',
+          family_friendly: true
+          image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwcm9maWxlLWxpa2VkfDEzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+          visitable_id: 2,
+          visitable_type: "User"
+          country: "Country"
+        }
+      }
+
+      post "/destinations", params: destination_params
+      destination = Destination.first
+      delete "/destinations/#{destination.id}"
+      expect(response).to have_http_status(200)
+      destinations = Destination.all
+      expect(destinations).to be_empty
+    end
+  end
 end
