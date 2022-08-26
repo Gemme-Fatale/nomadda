@@ -1,23 +1,31 @@
 @import 'bootstrap';
-@import 'https://fonts.googleapis.com/css?family=VT323';
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 
-.notfound{
+.notfound {
   $light-grey: #e0e2f4;
   $grey: #aaaaaa;
-  
+
   $base-font-size: 20px;
-  $font-stack: 'VT323', monospace;
-  
+  $font-stack: 'Aboreto',
+  cursive;
+
   main,
   h1,
   p,
-  a { color: $light-grey; }
-  
-  main,
-  p { font: normal #{$base-font-size}/1.25rem $font-stack; }
-  h1 { font: normal 2.75rem/1.05em $font-stack; }
+  a {
+    color: $light-grey;
+  }
 
-  
+  main,
+  p {
+    font: normal #{$base-font-size}/1.25rem $font-stack;
+  }
+
+  h1 {
+    font: normal 2.75rem/1.05em $font-stack;
+  }
+
+
 
   .container {
     position: fixed;
@@ -32,27 +40,44 @@
     margin-left: 50%;
     text-decoration: none;
     padding: 0 9px 2px 8px;
-      &:hover,
-      &:focus {
+
+    &:hover,
+    &:focus {
       background: $grey;
       color: #FFFFFF;
     }
   }
 
-  .title { margin-bottom: 50px; }
-  
+  .title {
+    margin-bottom: 50px;
+  }
+
+}
+
+.header {
+  font-family: 'Aboreto', cursive;
+}
+
+.footer {
+  font-family: 'Aboreto', cursive;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #448899;
+  color: white;
 }
 
 .allhome {
   background-color: rgba(255, 255, 240, 0.85);
-  src: 'https://fonts.googleapis.com/css?family=VT323';
-  font-family: 'VT323', monospace;
+  font-family: 'Aboreto', cursive;
 }
 
 .roundpics {
   margin-left: 10px;
   margin-right: 10px;
-  height:fit-content;
+  height: fit-content;
 }
 
 .homepageheader {
@@ -74,7 +99,7 @@
   text-align: center;
 }
 
-.totopbutton{
+.totopbutton {
   margin-left: 45%;
 }
 
@@ -86,7 +111,6 @@
   text-align: center;
   padding-top: 10px;
   padding-bottom: 15px;
-  src: 'https://fonts.googleapis.com/css?family=VT323';
   font-family: 'VT323', monospace, bold;
   color: #448899;
 }
@@ -97,23 +121,94 @@
 }
 
 .rightcardresource {
-  // margin-right: 50px;
   margin-bottom: 20px;
 }
 
 .leftcardtitleresource {
-  src: 'https://fonts.googleapis.com/css?family=VT323';
-  font-family: 'VT323', monospace;
+  font-family: 'Aboreto', cursive;
   color: #77DDEE;
   font-size: x-large;
   text-align: center;
 }
 
-.rightcardtitleresource{
-  src: 'https://fonts.googleapis.com/css?family=VT323';
-  font-family: 'VT323', monospace;
+.rightcardtitleresource {
+  font-family: 'Aboreto', cursive;
   color: #77DDEE;
   font-size: x-large;
   text-align: center;
 }
 
+.aboutuspage {
+  background-color: #F8A964;
+  font-family: 'Aboreto', cursive;
+  margin: auto;
+  width: 100%;
+  height: 1044px;
+}
+
+.aboutusheader {
+  color: #448899;
+  text-align: center;
+  padding-top: 20px;
+  // padding-bottom: 15px;
+}
+
+.aboutbutton {
+  margin-bottom: 500px;
+  position: relative;
+  top: 2%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.collapse {
+  height: 900px;
+  width: 950px;
+  margin-left: 245px;
+}
+
+.aboutheader {
+  text-align: center;
+  color: white;
+  background-color: #448899;
+}
+
+.aboutcardbody {
+  height: 50px;
+  width: 940px;
+  text-align: center;
+  font-size: 11pt;
+}
+
+.puacard{
+  height: 300px;
+  background-color: #FFFFF0;
+}
+
+.puabit {
+  height:150px;
+  width: 150px;
+  margin-left: 798px;
+}
+
+.nicolecard {
+  height: 300px;
+  background-color: #FFFFF0;
+}
+
+.nicolebit {
+  height: 150px;
+  width: 150px;
+  margin-left: 400px;
+}
+
+.willcard {
+  height: 300px;
+  background-color: #FFFFF0;
+}
+
+.willbit {
+  height: 150px;
+  width: 150px;
+}
