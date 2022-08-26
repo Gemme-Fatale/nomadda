@@ -36,7 +36,7 @@ class UserCreate extends Component {
   }
 
   render() {
-    console.log("state", this.state)
+  
     return (
       <>
       <h1>Let's Build a Trip!</h1>

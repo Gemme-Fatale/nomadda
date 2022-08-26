@@ -46,7 +46,6 @@ class App extends Component {
   }
 
   createUserDestinations = (mytrips) => {
-    console.log("mytrips", mytrips)
     fetch("/destinations", {
       body: JSON.stringify(mytrips),
       headers:{
