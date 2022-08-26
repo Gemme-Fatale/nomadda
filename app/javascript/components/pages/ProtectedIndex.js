@@ -23,8 +23,8 @@ class ProtectedIndex extends Component {
     const { destinations, logged_in, current_user } = this.props;
     return (
       <>
-        <div className="myTrips">
-          <h2>My Trips</h2>
+        <h1>My Trips</h1>
+        <div className= 'myTrips'>
           <Row sm="3">
             {destinations &&
               destinations.map((destination) => {

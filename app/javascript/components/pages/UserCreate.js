@@ -1,24 +1,28 @@
 import React, { Component } from 'react'
 import {  Redirect } from 'react-router-dom'
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
+import { Button, Form, FormGroup, FormText, Input, Label } from 'reactstrap'
 
 class UserCreate extends Component {
   constructor(props){
     super(props)
     this.state = {
       newDestination: {
-        location:"",
+        location: "",
+        main_attraction: "",
         start_date:"",
         end_date:"",
         travelers:"",
         trip_details:"",
-        image: "",
-        family_friendly: ""
+        image:"",
+        family_friendly: true,
+        visitable_id: this.props.current_user.id,
+        visitable_type: "User",
+        country: ""
       },
       submitted : false
     }
-  }
-  
+ };
+
   handleChange = (e) => {
   
     let {newDestination} = this.state
@@ -27,26 +31,45 @@ class UserCreate extends Component {
   }
 
   handleSubmit = () => {
-    this.props.createDestination(this.state.newDestination)
+    this.props.createUserDestinations(this.state.newDestination)
     this.setState({submitted: true})
   }
 
-
-
   render() {
-
+  
     return (
       <>
       <h1>Let's Build a Trip!</h1>
       <Form>
         <FormGroup>
-          <Label for="location">Location</Label>
+          <Label for="location">Pick a City!</Label>
             <Input
-              type="text"
+              type="select"
               name="location"
+              id="location"
               onChange = {this.handleChange}
-              value = {this.state.newDestination.location}
-              />
+              value = {this.state.newDestination.location}>
+                <option>-------</option>
+                <option>Bangkok</option>
+                <option>Phuket</option>
+                <option>Waikiki, HI</option>
+                <option>San Diego, CA</option>
+                </Input>
+        </FormGroup>
+        <FormGroup>
+          <Label for="country">Fill Out the Country</Label>
+            <Input
+              type="select"
+              name="country"
+              id="country"
+              onChange = {this.handleChange}
+              value = {this.state.newDestination.country}>
+                <option>-------</option>
+                <option>Thailand</option>
+                <option>Thailand</option>
+                <option>United States</option>
+                <option>United States</option>
+                </Input>
         </FormGroup>
         <FormGroup>
           <Label for="start_date">Start Date</Label>
@@ -85,21 +108,23 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label for="image">Image</Label>
+          <Label for="image">Upload an Image</Label>
             <Input
-              type="text"
+              type="url"
               name="image"
-              readOnly = {true}
-              value = {this.state.newDestination.image} disabled
+              id="image"
+              placeholder="Image URL"
+              onChange={this.handleChange}
+              value = {this.state.newDestination.image} 
               />
         </FormGroup>
         <FormGroup>
           <Label for="family_friendly">Family Friendly</Label>
             <Input
-              type="boolean"
+              type="checkbox"
               name="family_friendly"
               onChange = {this.handleChange}
-              value = {this.state.newDestination.family_friendly} disabled
+              value = {this.state.newDestination.family_friendly} 
               />
         </FormGroup>
           <Button
