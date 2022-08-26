@@ -24,6 +24,7 @@ class App extends Component {
       countries: []
     }
   }
+  
 
   componentDidMount(){
     Promise.all([this.readNomaddaDestinations(),

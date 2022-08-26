@@ -1,30 +1,29 @@
 import React, { Component } from 'react'
 import {  Redirect } from 'react-router-dom'
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
+import { Button, Form, FormGroup, FormText, Input, Label } from 'reactstrap'
 
 class UserCreate extends Component {
   constructor(props){
     super(props)
     this.state = {
       newDestination: {
-        location:"",
-        main_attraction: "Elephants",
+        location: "",
+        main_attraction: "",
         start_date:"",
         end_date:"",
         travelers:"",
         trip_details:"",
-        image:"https://live.staticflickr.com/3836/33536779445_88cd216ca8_b.jpg",
+        image:"",
         family_friendly: true,
         visitable_id: this.props.current_user.id,
         visitable_type: "User",
-        country: "Thailand" 
+        country: ""
       },
       submitted : false
     }
-  }
-  
+ };
+
   handleChange = (e) => {
-    this.setState({value: e.target.value});
   
     let {newDestination} = this.state
     newDestination[e.target.name] = e.target.value
@@ -32,27 +31,45 @@ class UserCreate extends Component {
   }
 
   handleSubmit = () => {
-    alert('A destination was made!: ' + this.state.value);
     this.props.createUserDestinations(this.state.newDestination)
-    this.setState({ submitted: true})
+    this.setState({submitted: true})
   }
 
-
-
   render() {
-  console.log("state", this.state)
+    console.log("state", this.state)
     return (
       <>
       <h1>Let's Build a Trip!</h1>
       <Form>
         <FormGroup>
-          <Label for="location">Location</Label>
+          <Label for="location">Pick a City!</Label>
             <Input
-              type="text"
+              type="select"
               name="location"
+              id="location"
               onChange = {this.handleChange}
-              value = {this.state.newDestination.location}
-              />
+              value = {this.state.newDestination.location}>
+                <option>-------</option>
+                <option>Bangkok</option>
+                <option>Phuket</option>
+                <option>Waikiki, HI</option>
+                <option>San Diego, CA</option>
+                </Input>
+        </FormGroup>
+        <FormGroup>
+          <Label for="country">Fill Out the Country</Label>
+            <Input
+              type="select"
+              name="country"
+              id="country"
+              onChange = {this.handleChange}
+              value = {this.state.newDestination.country}>
+                <option>-------</option>
+                <option>Thailand</option>
+                <option>Thailand</option>
+                <option>United States</option>
+                <option>United States</option>
+                </Input>
         </FormGroup>
         <FormGroup>
           <Label for="start_date">Start Date</Label>
@@ -90,30 +107,32 @@ class UserCreate extends Component {
               value = {this.state.newDestination.trip_details}
               />
         </FormGroup>
-        {/* <FormGroup>
-          <Label for="image">Image</Label>
+        <FormGroup>
+          <Label for="image">Upload an Image</Label>
             <Input
-              type="text"
+              type="url"
               name="image"
-              onChange = {this.handleChange}
-              value = {this.state.newDestination.image}
+              id="image"
+              placeholder="Image URL"
+              onChange={this.handleChange}
+              value = {this.state.newDestination.image} 
               />
-        </FormGroup> */}
-        {/* <FormGroup>
+        </FormGroup>
+        <FormGroup>
           <Label for="family_friendly">Family Friendly</Label>
             <Input
-              type="text"
+              type="checkbox"
               name="family_friendly"
               onChange = {this.handleChange}
-              value = {this.state.newDestination.family_friendly}
+              value = {this.state.newDestination.family_friendly} 
               />
-        </FormGroup> */}
+        </FormGroup>
           <Button
             name="submit"
             onClick={this.handleSubmit}>
             Create Trip!
           </Button>
-        { this.state.submitted && <Redirect to="/mytrips" />} 
+        { this.state.submitted && <Redirect to="/mytrips" />}
       </Form>
       </>
     )
