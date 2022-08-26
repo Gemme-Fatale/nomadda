@@ -16,7 +16,7 @@ describe("When Protected Index renders", () => {
     expect(protectedIndexHeading.length).toEqual(1)
   })
   it("it displays a header", () => {
-    const protectedIndexHeader = protectedIndexRender.find("h1")
+    const protectedIndexHeader = protectedIndexRender.find("h2")
     expect(protectedIndexHeader.length).toEqual(1)
   })
   it("it contains a row", () => {
