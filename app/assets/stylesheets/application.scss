@@ -1,5 +1,5 @@
 @import 'bootstrap';
-@import 'https://fonts.googleapis.com/css?family=VT323';
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 .notfound{
   $light-grey: #e0e2f4;
@@ -45,7 +45,6 @@
 
 .allhome {
   background-color: rgba(255, 255, 240, 0.85);
-  src: 'https://fonts.googleapis.com/css?family=VT323';
   font-family: 'VT323', monospace;
 }
 
@@ -86,7 +85,6 @@
   text-align: center;
   padding-top: 10px;
   padding-bottom: 15px;
-  src: 'https://fonts.googleapis.com/css?family=VT323';
   font-family: 'VT323', monospace, bold;
   color: #448899;
 }
@@ -102,7 +100,6 @@
 }
 
 .leftcardtitleresource {
-  src: 'https://fonts.googleapis.com/css?family=VT323';
   font-family: 'VT323', monospace;
   color: #77DDEE;
   font-size: x-large;
@@ -110,7 +107,6 @@
 }
 
 .rightcardtitleresource{
-  src: 'https://fonts.googleapis.com/css?family=VT323';
   font-family: 'VT323', monospace;
   color: #77DDEE;
   font-size: x-large;

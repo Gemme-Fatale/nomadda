@@ -12,6 +12,7 @@ import {
 import { NavLink } from "react-router-dom";
 
 class Show extends Component {
+
   render() {
     const { destinations, logged_in, current_user } = this.props;
 
@@ -20,6 +21,7 @@ class Show extends Component {
         destination.visitable_type === "Country" &&
         destination.country === this.props.match.params.country
     );
+
     return (
       <>
         <div className="show=container">
@@ -47,6 +49,7 @@ class Show extends Component {
         </div>
       </>
     );
+
   }
 }
 
