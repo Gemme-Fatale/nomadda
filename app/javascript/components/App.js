@@ -107,13 +107,14 @@ class App extends Component {
              <Route path="/show/:country" render={(props) => {
                 return <Show {...props} destinations={this.state.destinations} />;}}
             />
-            <Route path="/usercreate" render={(props)=>{
+             <Route path="/usercreate" render={(props)=>{
                return( <UserCreate createUserDestinations = {this.createUserDestinations} current_user = {this.props.current_user} />)}} />
              <Route path="/useredit/:id" render={(props) => {
                let id = +props.match.params.id
                let destinations = this.state.destinations.find(destination => destination.id === id)
                return <UserEdit destinations={destinations} updateUserDestinations={this.updateUserDestinations}/>}} />
              <Route exact path="/resources" component={Resources}></Route>
+             <Route exact path="/aboutus" component={AboutUs}/>
              <Route component={NotFound}/>
             </Switch>
           <Footer/>

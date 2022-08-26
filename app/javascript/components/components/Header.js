@@ -13,7 +13,7 @@ class Header extends Component {
     } = this.props
     return (
       <>
-        <div>
+        <div className='header'>
           <Nav fill variant="tabs">
           {!logged_in &&
             <NavItem>
