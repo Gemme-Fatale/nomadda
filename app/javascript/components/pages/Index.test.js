@@ -10,9 +10,16 @@ describe("When Index renders", () => {
       beforeEach(() => {
         indexRender = shallow(<Index />)
       })
-  it("it contains 2 div tags", () => {
-      const indexDiv = indexRender.find("div")
-      expect(indexDiv.length).toEqual(2)
+  it("it displays a header", () => {
+      const indexHeader1 = indexRender.find("h2")
+      expect(indexHeader1.length).toEqual(1)
+      expect(indexHeader1.text()).toEqual("Browse countries")
+  })
+
+  it("it displays a second header", () => {
+    const indexHeader1 = indexRender.find("h4")
+    expect(indexHeader1.length).toEqual(1)
+    expect(indexHeader1.text()).toEqual("Click on the Countries to see the beautiful destinations")
   })
 
   it("displays a Card group", () => {
