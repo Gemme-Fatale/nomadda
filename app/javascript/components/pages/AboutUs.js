@@ -31,7 +31,7 @@ class AboutUs extends Component {
             Meet Gemme Fatale
           </Button>
           <Collapse className="collapse" isOpen={this.state.collapse}>
-            <Card className="puacard">
+            <Card className="teamcard">
               <CardHeader className="aboutheader">Puana'ala K Amano</CardHeader>
               <CardImg className="puabit" alt="Pua-bitmoji" src="https://sdk.bitmoji.com/render/panel/10211812-99378340395_2-s5-v1.png?transparent=1&palette=1&scale=2"/>
               <CardBody className="aboutcardbody">
@@ -47,7 +47,7 @@ class AboutUs extends Component {
                 </a>
               </CardFooter>
             </Card>
-            <Card className="nicolecard">
+            <Card className="teamcard">
               <CardHeader className="aboutheader">Nicole Mares Rivera</CardHeader>
               <CardImg className="nicolebit" alt="Nicole-bitmoji" src="https://sdk.bitmoji.com/render/panel/20054902-100355118586_3-s5-v1.png?transparent=1&palette=1&scale=2"/>
               <CardBody className="aboutcardbody">
@@ -63,7 +63,7 @@ class AboutUs extends Component {
                 </a>
               </CardFooter>
             </Card>
-            <Card className="willcard">
+            <Card className="teamcard">
               <CardHeader className="aboutheader">Deanna 'Will' Williams</CardHeader>
               <CardImg className="willbit" alt="Will-bitmoji" src="https://sdk.bitmoji.com/render/panel/10208518-100074578892_4-s5-v1.png?transparent=1&palette=1&scale=2"/>
               <CardBody className="aboutcardbody">
