@@ -24,12 +24,12 @@ class Show extends Component {
 
     return (
       <>
-        <div className="show=container">
-          <Row sm="3">
+        <div className="showpage">
+          <Row sm='4' md='4' lg='3'>
             {countryDestinations &&
               countryDestinations.map((destination) => {
                 return (
-                  <Card id="showCard" key={destination.id}>
+                  <Card id="showCard" key={destination.id} className='showcards'>
                     <CardImg src={destination.image} />
                     <CardBody>
                       <CardTitle>{destination.location}</CardTitle>
@@ -39,7 +39,7 @@ class Show extends Component {
                         {destination.main_attraction}
                       </CardText>
                         <NavLink to={"/usercreate"}>
-                          <Button>Create A Trip!</Button>
+                          <Button className='showbutton'>Create A Trip!</Button>
                         </NavLink>
                     </CardBody>
                   </Card>
