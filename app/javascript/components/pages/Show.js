@@ -24,8 +24,9 @@ class Show extends Component {
 
     return (
       <>
+        <div className="showheader">Find your inner Nomad at these destinations!</div>
         <div className="showpage">
-          <Row sm='4' md='4' lg='3'>
+          <Row sm='4' md='4' lg='4'>
             {countryDestinations &&
               countryDestinations.map((destination) => {
                 return (
