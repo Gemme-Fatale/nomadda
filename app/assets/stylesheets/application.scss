@@ -233,6 +233,116 @@
   font-size: 32px;
   padding-top: 20px;
   background-color: #FFFFF0;
+}
+
+.loginheader{
+  margin-left: 277px;
+  margin-right: 250px;
+  color: #448899;
+  font-family: 'Aboreto', cursive;
+  font-size: 40px;
+  background-color: #77DDEE;
+  margin-top: 146px;
+}
+
+.loginformbox{
+  background-color: #FFFFF0;
+  width: 700px;
+  height: 400px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.loginpage{
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #77DDEE;
+  position: relative;
+  overflow: hidden;
+}
+
+.log{
+  padding-top: 25px;
+  color: #F8A964;
+  margin-left: 200px;
+    font-size: 33px;
+}
+
+.emailfield{
+  padding-top: 15px;
+  margin-left: 268px;
+  color: #77DDEE
+}
+
+.passwordfield{
+  padding-top: 9px;
+  margin-left: 268px;
+  color: #77DDEE
+}
+.cocofield{
+  padding-top: 9px;
+  margin-left: 300px;
+  color: #448899
+}
+
+.actions{
+  margin-left: 328px;
+  padding-top: 10px;
+}
+
+.links{
+  margin-left: 282px;
+  padding-top: 44px;
+}
+
+.signuppage{
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #77DDEE;
+  position: relative;
+  overflow: hidden;
+}
+
+.signupheader{
+  margin-left: 277px;
+  margin-right: 250px;
+  color: #448899;
+  font-family: 'Aboreto', cursive;
+  font-size: 40px;
+  background-color: #77DDEE;
+  margin-top: 146px;
+}
+
+.signupformbox{
+  background-color: #FFFFF0;
+  width: 700px;
+  height: 400px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign{
+  padding-top: 25px;
+  color: #F8A964;
+  margin-left: 180px;
+    font-size: 33px;
+}
+
+.field{
+  padding-top: 15px;
+  margin-left: 268px;
+  color: #77DDEE
+}
+
+.loginlink{
+  margin-left: 341px;
+  padding-top: 44px;
 
 .indexpage {
   font-family: 'Aboreto', cursive;
