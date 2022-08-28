@@ -20,47 +20,44 @@ class ProtectedIndex extends Component {
   }
 
   render() {
-    const { destinations, logged_in, current_user } = this.props;
+    const { destinations } = this.props;
     return (
       <>
-        <h1>My Trips</h1>
-        <div className= 'myTrips'>
-          <Row sm="3">
-            {destinations &&
-              destinations.map((destination) => {
-                return (
-                  <Card key={destination.id}>
-                    <CardImg
-                      top
-                      width="100%"
-                      src={destination.image}
-                      alt="Card image cap"
-                    />
-                    <CardBody>
-                      <CardTitle>
-                        {destination.location}, {destination.country}
-                      </CardTitle>
-                      <br />
-                      <CardSubtitle>
-                        Dates: {destination.start_date} - {destination.end_date}
-                      </CardSubtitle>
-                      <CardSubtitle>
-                        Travelers: {destination.travelers}
-                      </CardSubtitle>
-                      <CardText>{destination.trip_details}</CardText>
-                      <NavLink to={`/useredit/${destination.id}`}>
-                        <Button>Edit Trip</Button>
-                      </NavLink>
-                      <NavLink to={"/mytrips"} >
-                        <Button onClick={() => this.props.deleteUserDestination(destination.id)}>
-                          Delete Trip
-                        </Button>
-                      </NavLink>
-                    </CardBody>
-                  </Card>
-                );
-              })}
-          </Row>
+        <div className="propage">
+          <h1 className="indexheader">My Trips</h1>
+          <div className= 'myTrips'>
+            <Row sm="3" className="procardsgroup">
+              {destinations &&
+                destinations.map((destination) => {
+                  return (
+                    <Card key={destination.id} className="procards">
+                      <CardImg className='proindeximg' top width="100%" src={destination.image} alt="Card image cap"/>
+                      <CardBody>
+                        <CardTitle>
+                          {destination.location}, {destination.country}
+                        </CardTitle>
+                        <br />
+                        <CardSubtitle>
+                          Dates: {destination.start_date} - {destination.end_date}
+                        </CardSubtitle>
+                        <CardSubtitle>
+                          Travelers: {destination.travelers}
+                        </CardSubtitle>
+                        <CardText>{destination.trip_details}</CardText>
+                        <NavLink to={`/useredit/${destination.id}`}>
+                          <Button className="probutton">Edit Trip</Button>
+                        </NavLink>
+                        <NavLink to={"/mytrips"} >
+                          <Button onClick={() => this.props.deleteUserDestination(destination.id)}>
+                            Delete Trip
+                          </Button>
+                        </NavLink>
+                      </CardBody>
+                    </Card>
+                  );
+                })}
+            </Row>
+          </div>
         </div>
       </>
     );
