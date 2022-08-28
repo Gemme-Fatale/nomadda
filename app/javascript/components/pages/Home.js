@@ -63,7 +63,7 @@ class Home extends Component {
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Safe and Welcoming Destinations
                 </CardTitle>
-                <CardText style={{ color: "#F8A964" }}>
+                <CardText style={{ color: "#448899" }}>
                   {" "}
                   Nomadda can assure you that we have verified the travel
                   locations to have the most welcoming environments for the
@@ -79,7 +79,7 @@ class Home extends Component {
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Trip Builder
                 </CardTitle>
-                <CardText style={{ color: "#F8A964" }}>
+                <CardText style={{ color: "#448899" }}>
                   {" "}
                   With this all inclusive web application, you can use Nomadda
                   to search areas most friendly to the LGBTQ+ community, create
@@ -94,7 +94,7 @@ class Home extends Component {
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Crime statistics
                 </CardTitle>
-                <CardText style={{ color: "#F8A964" }}>
+                <CardText style={{ color: "#448899" }}>
                   Although, we can guarantee you a safe and welcoming
                   destination to visit, Nomadda is not responsible for political
                   climate shifts, random occurrences of individuals local to
@@ -110,7 +110,7 @@ class Home extends Component {
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Resource Hub
                 </CardTitle>
-                <CardText style={{ color: "#F8A964" }}>
+                <CardText style={{ color: "#448899" }}>
                   The resources we have provided have been thoroughly vetted to
                   make sure that they are not only a verified source of
                   information but they are from actual travelers in the LGBT+
