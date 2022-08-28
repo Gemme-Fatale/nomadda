@@ -34,61 +34,69 @@ export class UserEdit extends Component {
     this.setState({ success: true })
   }
 
-  render(){
+  render() {
     let {destinations} = this.props
     return (
       <>
-        <h2 className='usereditheader'>Let's Make Some Changes!</h2>
-        {destinations && 
-          <Form className='usereditform'>
-            <FormGroup>
-              <Label for="location">Location: </Label>
-              <Input
-              type="text"
-              name="location"
-              onChange={this.handleChange}
-              value={this.state.updatedTrip.location}/>
-            </FormGroup>
-            <FormGroup>
-              <Label for="start_date">Start Date: </Label>
-              <Input
-              type="date"
-              name="start_date"
-              onChange={this.handleChange}
-              value={this.state.updatedTrip.start_date}/>
-            </FormGroup> 
-            <FormGroup>
-              <Label for="end_date">End Date: </Label>
-              <Input
-              type="date"
-              name="end_date"
-              onChange={this.handleChange}
-              value={this.state.updatedTrip.end_date}/>
-            </FormGroup>
-            <FormGroup>
-              <Label for="travelers">Number of Travelers: </Label>
-              <Input
-              type="number"
-              name="travelers"
-              onChange={this.handleChange}
-              value={this.state.updatedTrip.travelers}/>
-            </FormGroup>
-            <FormGroup>
-              <Label for="trip_details">Trip Details: </Label>
-              <Input
-              type="textarea"
-              name="trip_details"
-              onChange={this.handleChange}
-              value={this.state.updatedTrip.trip_details}/>
-            </FormGroup>        
-            <Button 
-              name="submit" 
-              onClick={this.handleSubmit}>
-              Update Trip!
-            </Button>  
-            {this.state.success && <Redirect to={"/mytrips"}/>}
-          </Form>
-        }
+        <div className='wholeeditpage'>
+          <h2 className='usereditheader'>Let's Make Some Changes!</h2>
+          {destinations && 
+            <Form className='usereditform'>
+              <FormGroup>
+                <Label className='editformlabel' for="location">Location: </Label>
+                <Input
+                className='editinput'
+                type="text"
+                name="location"
+                onChange={this.handleChange}
+                value={this.state.updatedTrip.location}/>
+              </FormGroup>
+              <FormGroup>
+                <Label className='editformlabel' for="start_date">Start Date: </Label>
+                <Input
+                className='editinput'
+                type="date"
+                name="start_date"
+                onChange={this.handleChange}
+                value={this.state.updatedTrip.start_date}/>
+              </FormGroup> 
+              <FormGroup>
+                <Label className='editformlabel' for="end_date">End Date: </Label>
+                <Input
+                className='editinput'
+                type="date"
+                name="end_date"
+                onChange={this.handleChange}
+                value={this.state.updatedTrip.end_date}/>
+              </FormGroup>
+              <FormGroup>
+                <Label className='editformlabel' for="travelers">Number of Travelers: </Label>
+                <Input
+                className='editinput'
+                type="number"
+                name="travelers"
+                onChange={this.handleChange}
+                value={this.state.updatedTrip.travelers}/>
+              </FormGroup>
+              <FormGroup>
+                <Label className='editformlabel' for="trip_details">Trip Details: </Label>
+                <Input
+                className='editinput'
+                type="textarea"
+                name="trip_details"
+                onChange={this.handleChange}
+                value={this.state.updatedTrip.trip_details}/>
+              </FormGroup>        
+              <Button 
+                className='editbutton'
+                name="submit" 
+                onClick={this.handleSubmit}>
+                Update Trip!
+              </Button>  
+              {this.state.success && <Redirect to={"/mytrips"}/>}
+            </Form>
+          }
+        </div>
       </>
     )
   }
