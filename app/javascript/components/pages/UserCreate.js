@@ -39,41 +39,65 @@ class UserCreate extends Component {
   
     return (
       <>
-      <h1>Let's Build a Trip!</h1>
-      <Form>
+      <div className='wholeeditpage'>
+      <h1 className='usereditheader'>Let's Build a Trip!</h1>
+      <Form className='usereditform'>
         <FormGroup>
-          <Label for="location">Pick a City!</Label>
+          <Label className='editformlabel' for="location">Pick a City!</Label>
             <Input
+              className='editinput'
               type="select"
               name="location"
               id="location"
               onChange = {this.handleChange}
               value = {this.state.newDestination.location}>
                 <option>-------</option>
+                <option>Sydney</option>
+                <option>Melbourne</option>
+                <option>Athens</option>
+                <option>Santorini</option>
+                <option>Mykonos</option>
+                <option>Stockholm</option>
+                <option>Gothenburg</option>
                 <option>Bangkok</option>
                 <option>Phuket</option>
+                <option>Chiang Mai</option>
+                <option>Taipei</option>
+                <option>Kenting National Park</option>
                 <option>Waikiki, HI</option>
                 <option>San Diego, CA</option>
                 </Input>
         </FormGroup>
         <FormGroup>
-          <Label for="country">Fill Out the Country</Label>
+          <Label className='editformlabel' for="country">Fill Out the Country</Label>
             <Input
+              className='editinput'
               type="select"
               name="country"
               id="country"
               onChange = {this.handleChange}
               value = {this.state.newDestination.country}>
                 <option>-------</option>
+                <option>Australia</option>
+                <option>Australia</option>
+                <option>Greece</option>
+                <option>Greece</option>
+                <option>Greece</option>
+                <option>Sweden</option>
+                <option>Sweden</option>
                 <option>Thailand</option>
                 <option>Thailand</option>
+                <option>Thailand</option>
+                <option>Taiwan</option>
+                <option>Taiwan</option>
                 <option>United States</option>
                 <option>United States</option>
                 </Input>
         </FormGroup>
         <FormGroup>
-          <Label for="start_date">Start Date</Label>
+          <Label className='editformlabel' for="start_date">Start Date</Label>
             <Input
+              className='editinput'
               type="date"
               name="start_date"
               onChange = {this.handleChange}
@@ -81,8 +105,9 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label for="end_date">End Date</Label>
+          <Label className='editformlabel' for="end_date">End Date</Label>
             <Input
+              className='editinput'
               type="date"
               name="end_date"
               onChange = {this.handleChange}
@@ -90,8 +115,9 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label for="travelers">Number of Travelers</Label>
+          <Label className='editformlabel' for="travelers">Number of Travelers</Label>
             <Input
+              className='editinput'
               type="number"
               name="travelers"
               onChange = {this.handleChange}
@@ -99,8 +125,9 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label for="trip_details">Trip Details</Label>
+          <Label className='editformlabel' for="trip_details">Trip Details</Label>
             <Input
+              className='editinput'
               type="textarea"
               name="trip_details"
               onChange = {this.handleChange}
@@ -108,8 +135,9 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label for="image">Upload an Image</Label>
+          <Label className='editformlabel' for="image">Upload an Image</Label>
             <Input
+              className='editinput'
               type="url"
               name="image"
               id="image"
@@ -119,7 +147,7 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label for="family_friendly">Family Friendly</Label>
+          <Label className='editformlabel' for="family_friendly">Family Friendly</Label>
             <Input
               type="checkbox"
               name="family_friendly"
@@ -128,12 +156,14 @@ class UserCreate extends Component {
               />
         </FormGroup>
           <Button
+            className='editbutton'
             name="submit"
             onClick={this.handleSubmit}>
             Create Trip!
           </Button>
         { this.state.submitted && <Redirect to="/mytrips" />}
       </Form>
+      </div>
       </>
     )
   }
