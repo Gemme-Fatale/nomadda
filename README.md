@@ -44,38 +44,10 @@ Checkout the [Nomadda Website!](https://calm-river-47523.herokuapp.com/)
 ### Polymorphic Associations (Country, Destination and User)
 Gemme Fatale utilized polymorphic associations to have destinations be visitable association. The polymorphic association allowed countries to have destinations and the user is able to make new destinations (trips) without any country destinations being deleted. Below is an example of the associations and how they would work with one another. 
 
-**app/models/country.rb**
-```ruby
-class Country < ApplicationRecord
-    has_many :destinations, as: :visitable
-    validates :name, :prime_destination, :primary_language, :known_for, :climate, :nightlife, :image, presence: true
-end
-```
-**app/models/destination.rb**
-```ruby
-class Destination < ApplicationRecord
-    belongs_to :visitable, polymorphic: true
-end
-```
-**app/models/user.rb**
-```ruby
-class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable;
-  has_many :destinations, as: :visitable
-end
-```
 
 ### 🛫 Destinations Resource
 Since Gemme Fatale used polymorphic associations, the models were generated a little differently. The Devise User model is going to have an association with the Destination model. Since the associations are polymorphic, the destinations will be visitable to the user and the Country. The User will have many destinations and Country will have many destinations. The "able" suffix is added onto the polymorphic verb that connects the two models. The visitable_id and visitable_type are automatically generated. If a destination is added to the Country model via rails, the visitable_type will be "Country" and the visitable_id is the Country id. When a User adds a destination to their trip builder, the visitable_type is "User" and the visitable_id is the User id. Below is an example of how we created the models (minus the User) for Nomadda.
 
-```bash
-  rails generate resource Country name:string prime_destination:string primary_language:string known_for:string climate:string nightlife:string image:text
-  rails db:migrate
-```
-```bash
-    rails generate resource Destination location:string main_attraction:string start_date:date end_date:date travelers:integer trip_details:text family_friendly:boolean image:text country:string visitable_id:integer visitable_type: string rails db:migrate  
-```
 
 ## To Do List
 There are several items that we would love to add to Nomadda in the future:
