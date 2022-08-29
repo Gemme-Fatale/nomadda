@@ -8,16 +8,16 @@ class Index extends Component {
     
     return (
       <>
-        <div className='indexpage'>
-          <h2 className='indexheader'>Browse countries</h2>
-          <h4 className='indexheader'>Click on the Countries to see the beautiful destinations</h4>
-          <CardGroup className='indexcardgroup'>
+        <div className='index-page'>
+          <h2 className='index-header'>Browse countries</h2>
+          <h4 className='index-header'>Click on the Countries to see the beautiful destinations</h4>
+          <CardGroup className='index-card-group'>
             {this.props.countries && this.props.countries.map(country => {
               return (
                 <Col sm='4' md='4' lg='4'key={country.id}>
                   <NavLink to={`/show/${country.name}`}>
-                  <Card className='indexcard' >
-                    <CardImg className='indeximg' top width='100%' src={country.image} alt='Card image cap' />
+                  <Card className='index-card' >
+                    <CardImg className='index-img' top width='100%' src={country.image} alt='Card image cap' />
                     <CardBody>
                       <CardTitle>
                         {country.name}

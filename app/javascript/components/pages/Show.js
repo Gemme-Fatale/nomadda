@@ -24,13 +24,13 @@ class Show extends Component {
 
     return (
       <>
-        <div className="showheader">Find your inner Nomad at these destinations!</div>
-        <div className="showpage">
+        <div className="show-header">Find your inner Nomad at these destinations!</div>
+        <div className="show-page">
           <Row sm='4' md='4' lg='4'>
             {countryDestinations &&
               countryDestinations.map((destination) => {
                 return (
-                  <Card id="showCard" key={destination.id} className='showcards'>
+                  <Card id="showCard" key={destination.id} className='show-cards'>
                     <CardImg src={destination.image} />
                     <CardBody>
                       <CardTitle>{destination.location}</CardTitle>
@@ -40,7 +40,7 @@ class Show extends Component {
                         {destination.main_attraction}
                       </CardText>
                         <NavLink to={"/usercreate"}>
-                          <Button className='showbutton'>Create A Trip!</Button>
+                          <Button className='show-button'>Create A Trip!</Button>
                         </NavLink>
                     </CardBody>
                   </Card>

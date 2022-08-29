@@ -1,6 +1,6 @@
-<body class="signuppage">
-  <div class="signupheader">Nomadda who you are...</div>
-  <div class="signupformbox">
+<body class="signup-page">
+  <div class="signup-header">Nomadda who you are...</div>
+  <div class="signup-for-mbox">
     <div class="sign">Sign Up for a Free Account!</div>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -28,7 +28,7 @@
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
-    <div class="loginlink">
+    <div class="login-link">
     <%= render "devise/shared/links" %>
     </div>
   </div>

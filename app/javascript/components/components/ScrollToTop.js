@@ -28,7 +28,7 @@ export default function ScrollToTop() {
     return (
         <div>
             {isVisible && (
-            <Button className='totopbutton' onClick={scrollToTop}>Back to top</Button>)}
+            <Button className='to-top-button' onClick={scrollToTop}>Back to top</Button>)}
         </div>
     )
 }

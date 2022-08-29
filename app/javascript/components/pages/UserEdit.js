@@ -38,57 +38,57 @@ export class UserEdit extends Component {
     let {destinations} = this.props
     return (
       <>
-        <div className='wholeeditpage'>
-          <h2 className='usereditheader'>Let's Make Some Changes!</h2>
+        <div className='whole-edit-page'>
+          <h2 className='user-edit-header'>Let's Make Some Changes!</h2>
           {destinations && 
-            <Form className='usereditform'>
+            <Form className='user-edit-form'>
               <FormGroup>
-                <Label className='editformlabel' for="location">Location: </Label>
+                <Label className='edit-form-label' for="location">Location: </Label>
                 <Input
-                className='editinput'
+                className='edit-input'
                 type="text"
                 name="location"
                 onChange={this.handleChange}
                 value={this.state.updatedTrip.location}/>
               </FormGroup>
               <FormGroup>
-                <Label className='editformlabel' for="start_date">Start Date: </Label>
+                <Label className='edit-form-label' for="start_date">Start Date: </Label>
                 <Input
-                className='editinput'
+                className='edit-input'
                 type="date"
                 name="start_date"
                 onChange={this.handleChange}
                 value={this.state.updatedTrip.start_date}/>
               </FormGroup> 
               <FormGroup>
-                <Label className='editformlabel' for="end_date">End Date: </Label>
+                <Label className='edit-form-label' for="end_date">End Date: </Label>
                 <Input
-                className='editinput'
+                className='edit-input'
                 type="date"
                 name="end_date"
                 onChange={this.handleChange}
                 value={this.state.updatedTrip.end_date}/>
               </FormGroup>
               <FormGroup>
-                <Label className='editformlabel' for="travelers">Number of Travelers: </Label>
+                <Label className='edit-form-label' for="travelers">Number of Travelers: </Label>
                 <Input
-                className='editinput'
+                className='edit-input'
                 type="number"
                 name="travelers"
                 onChange={this.handleChange}
                 value={this.state.updatedTrip.travelers}/>
               </FormGroup>
               <FormGroup>
-                <Label className='editformlabel' for="trip_details">Trip Details: </Label>
+                <Label className='edit-form-label' for="trip_details">Trip Details: </Label>
                 <Input
-                className='editinput'
+                className='edit-input'
                 type="textarea"
                 name="trip_details"
                 onChange={this.handleChange}
                 value={this.state.updatedTrip.trip_details}/>
               </FormGroup>        
               <Button 
-                className='editbutton'
+                className='edit-button'
                 name="submit" 
                 onClick={this.handleSubmit}>
                 Update Trip!

@@ -1,22 +1,22 @@
-<body class='loginpage'>
-  <div class="loginheader">Nomadda where you go...</div>
+<body class='login-page'>
+  <div class="login-header">Nomadda where you go...</div>
   
-  <div class='loginformbox'>
+  <div class='login-for-mbox'>
     <div class='log'>Log In To Your Account!</div>
       <div>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="emailfield">
+        <div class="email-field">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
-        <div class="passwordfield">
+        <div class="password-field">
           <%= f.label :password %><br />
           <%= f.password_field :password, autocomplete: "current-password" %>
         </div>
 
         <% if devise_mapping.rememberable? %>
-          <div class="cocofield">
+          <div class="coco-field">
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
           </div>

@@ -44,22 +44,22 @@ class Home extends Component {
   render() {
     return (
       <>
-        <div className="allhome">
+        <div className="all-home">
           <br />
-          <h1 className="homepageheader">Nomadda the place or space...</h1>
+          <h1 className="home-page-header">Nomadda the place or space...</h1>
           <br />
-          <Row className="cpics">
+          <Row className="c-pics">
             <Col className="mx-auto">
               <UncontrolledCarousel
-                className="roundpics"
+                className="round-pics"
                 items={this.state.carouselPics}
               />
             </Col>
           </Row>
           <br />
-          <CardGroup className="homepage">
+          <CardGroup className="home-page">
             <Card>
-              <CardBody className="homepage">
+              <CardBody className="home-page">
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Safe and Welcoming Destinations
                 </CardTitle>
@@ -75,7 +75,7 @@ class Home extends Component {
               </CardBody>
             </Card>
             <Card>
-              <CardBody className="homepage">
+              <CardBody className="home-page">
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Trip Builder
                 </CardTitle>
@@ -90,7 +90,7 @@ class Home extends Component {
               </CardBody>
             </Card>
             <Card>
-              <CardBody className="homepage">
+              <CardBody className="home-page">
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Crime statistics
                 </CardTitle>
@@ -106,7 +106,7 @@ class Home extends Component {
               </CardBody>
             </Card>
             <Card>
-              <CardBody className="homepage">
+              <CardBody className="home-page">
                 <CardTitle tag="h5" style={{ color: "#77DDEE" }}>
                   Resource Hub
                 </CardTitle>
