@@ -39,13 +39,13 @@ class UserCreate extends Component {
   
     return (
       <>
-      <div className='wholeeditpage'>
-      <h1 className='usereditheader'>Let's Build a Trip!</h1>
-      <Form className='usereditform'>
+      <div className='whole-edit-page'>
+      <h1 className='user-edit-header'>Let's Build a Trip!</h1>
+      <Form className='user-edit-form'>
         <FormGroup>
-          <Label className='editformlabel' for="location">Pick a City!</Label>
+          <Label className='edit-form-label' for="location">Pick a City!</Label>
             <Input
-              className='editinput'
+              className='edit-input'
               type="select"
               name="location"
               id="location"
@@ -69,9 +69,9 @@ class UserCreate extends Component {
                 </Input>
         </FormGroup>
         <FormGroup>
-          <Label className='editformlabel' for="country">Fill Out the Country</Label>
+          <Label className='edit-form-label' for="country">Fill Out the Country</Label>
             <Input
-              className='editinput'
+              className='edit-input'
               type="select"
               name="country"
               id="country"
@@ -95,9 +95,9 @@ class UserCreate extends Component {
                 </Input>
         </FormGroup>
         <FormGroup>
-          <Label className='editformlabel' for="start_date">Start Date</Label>
+          <Label className='edit-form-label' for="start_date">Start Date</Label>
             <Input
-              className='editinput'
+              className='edit-input'
               type="date"
               name="start_date"
               onChange = {this.handleChange}
@@ -105,9 +105,9 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label className='editformlabel' for="end_date">End Date</Label>
+          <Label className='edit-form-label' for="end_date">End Date</Label>
             <Input
-              className='editinput'
+              className='edit-input'
               type="date"
               name="end_date"
               onChange = {this.handleChange}
@@ -115,9 +115,9 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label className='editformlabel' for="travelers">Number of Travelers</Label>
+          <Label className='edit-form-label' for="travelers">Number of Travelers</Label>
             <Input
-              className='editinput'
+              className='edit-input'
               type="number"
               name="travelers"
               onChange = {this.handleChange}
@@ -125,9 +125,9 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label className='editformlabel' for="trip_details">Trip Details</Label>
+          <Label className='edit-form-label' for="trip_details">Trip Details</Label>
             <Input
-              className='editinput'
+              className='edit-input'
               type="textarea"
               name="trip_details"
               onChange = {this.handleChange}
@@ -135,9 +135,9 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label className='editformlabel' for="image">Upload an Image</Label>
+          <Label className='edit-form-label' for="image">Upload an Image</Label>
             <Input
-              className='editinput'
+              className='edit-input'
               type="url"
               name="image"
               id="image"
@@ -147,7 +147,7 @@ class UserCreate extends Component {
               />
         </FormGroup>
         <FormGroup>
-          <Label className='editformlabel' for="family_friendly">Family Friendly</Label>
+          <Label className='edit-form-label' for="family_friendly">Family Friendly</Label>
             <Input
               type="checkbox"
               name="family_friendly"
@@ -156,7 +156,7 @@ class UserCreate extends Component {
               />
         </FormGroup>
           <Button
-            className='editbutton'
+            className='edit-button'
             name="submit"
             onClick={this.handleSubmit}>
             Create Trip!
