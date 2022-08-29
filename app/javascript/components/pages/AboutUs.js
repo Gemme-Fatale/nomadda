@@ -25,16 +25,16 @@ class AboutUs extends Component {
   render() {
     return (
       <>
-        <div className="aboutuspage">
-          <h2 className="aboutusheader">We are Gemme Fatale</h2>
-          <Button className="aboutbutton" color="primary" onClick={this.toggle} style={{ marginBottom: "1rem" }}>
+        <div className="about-us-page">
+          <h2 className="about-us-header">We are Gemme Fatale</h2>
+          <Button className="about-button" color="primary" onClick={this.toggle} style={{ marginBottom: "1rem" }}>
             Meet Gemme Fatale
           </Button>
           <Collapse className="collapse" isOpen={this.state.collapse}>
-            <Card className="teamcard">
-              <CardHeader className="aboutheader">Puana'ala K Amano</CardHeader>
-              <CardImg className="puabit" alt="Pua-bitmoji" src="https://sdk.bitmoji.com/render/panel/10211812-99378340395_2-s5-v1.png?transparent=1&palette=1&scale=2"/>
-              <CardBody className="aboutcardbody">
+            <Card className="team-card">
+              <CardHeader className="about-header">Puana'ala K Amano</CardHeader>
+              <CardImg className="pua-bit" alt="Pua-bitmoji" src="https://sdk.bitmoji.com/render/panel/10211812-99378340395_2-s5-v1.png?transparent=1&palette=1&scale=2"/>
+              <CardBody className="about-card-body">
                 Full-Stack Developer born and raised on Maui, Hawaii the most beautiful place in the world. I enjoy the outdoors with my two dogs and chicken 'Milky'. "Continuous learning is a way of life" -Pua
               </CardBody>
               <CardFooter style={{textAlign: "center"}}>
@@ -47,10 +47,10 @@ class AboutUs extends Component {
                 </a>
               </CardFooter>
             </Card>
-            <Card className="teamcard">
-              <CardHeader className="aboutheader">Nicole Mares Rivera</CardHeader>
-              <CardImg className="nicolebit" alt="Nicole-bitmoji" src="https://sdk.bitmoji.com/render/panel/20054902-100355118586_3-s5-v1.png?transparent=1&palette=1&scale=2"/>
-              <CardBody className="aboutcardbody">
+            <Card className="team-card">
+              <CardHeader className="about-header">Nicole Mares Rivera</CardHeader>
+              <CardImg className="nicole-bit" alt="Nicole-bitmoji" src="https://sdk.bitmoji.com/render/panel/20054902-100355118586_3-s5-v1.png?transparent=1&palette=1&scale=2"/>
+              <CardBody className="about-card-body">
                 Full-Stack Developer originally from New York currently living in San Diego, California with a passion for coding. An animal aficionado who loves to spend time with her family outdoors and playing sports!
               </CardBody>
               <CardFooter style={{textAlign: "center"}}>
@@ -63,10 +63,10 @@ class AboutUs extends Component {
                 </a>
               </CardFooter>
             </Card>
-            <Card className="teamcard">
-              <CardHeader className="aboutheader">Deanna 'Will' Williams</CardHeader>
-              <CardImg className="willbit" alt="Will-bitmoji" src="https://sdk.bitmoji.com/render/panel/10208518-100074578892_4-s5-v1.png?transparent=1&palette=1&scale=2"/>
-              <CardBody className="aboutcardbody">
+            <Card className="team-card">
+              <CardHeader className="about-header">Deanna 'Will' Williams</CardHeader>
+              <CardImg className="will-bit" alt="Will-bitmoji" src="https://sdk.bitmoji.com/render/panel/10208518-100074578892_4-s5-v1.png?transparent=1&palette=1&scale=2"/>
+              <CardBody className="about-card-body">
                 Full-Stack Developer born and raised in a small town in Virginia but fell in love with the vibe here in San Diego, California. Dedicated to creative and meaningful digital experiences.
               </CardBody>
               <CardFooter style={{textAlign: "center"}}>

@@ -5,13 +5,13 @@ class Resources extends Component {
   render() {
     return (
       <>
-        <div className='resourcePage'>
-          <h2 className='resourceheader'>External Resources</h2>
+        <div className='resource-page'>
+          <h2 className='resource-header'>External Resources</h2>
           <Row sm="3">
-            <Card className='leftcardresource' style={{position: 'center', border: "light", width: '25rem'}}>
+            <Card className='left-card-resource' style={{position: 'center', border: "light", width: '25rem'}}>
               <CardBody>
                 <List type="inline">
-                  <CardSubtitle className='leftcardtitleresource'>Travel Websites</CardSubtitle>
+                  <CardSubtitle className='left-card-title-resource'>Travel Websites</CardSubtitle>
                   <ListInlineItem>
                     <a href='https://travel.state.gov/content/travel/en/international-travel/before-you-go/travelers-with-special-considerations/lgbtqi.html' target="_blank" rel="noreferrer" style={{ color: "#448899" }}>Travel.gov</a>
                   </ListInlineItem>
@@ -40,10 +40,10 @@ class Resources extends Component {
             </Card>
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <Card className='rightcardresource' style={{position: 'center', border: "light", width: '25rem' }}>
+            <Card className='right-card-resource' style={{position: 'center', border: "light", width: '25rem' }}>
               <CardBody>
                 <List type="inline">  
-                  <CardSubtitle className='rightcardtitleresource'>Top LGBTQ Travel Blogs</CardSubtitle>
+                  <CardSubtitle className='right-card-title-resource'>Top LGBTQ Travel Blogs</CardSubtitle>
                   <br/>
                   <ListInlineItem>
                     <a href='https://www.ellgeebe.com/' target="_blank" rel="noreferrer" style={{ color: "#448899" }}>ellgeebe.com</a>
